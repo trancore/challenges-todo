@@ -42,6 +42,8 @@ jobs:
         with:
           node-version: 24
           cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
       - name: build
         run: pnpm run build
       - name: Upload artifact
