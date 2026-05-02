@@ -1,0 +1,32 @@
+﻿@import "tailwindcss";
+
+@theme {
+	--animate-todo-enter: todo-enter 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@layer components {
+	.loading-spinner {
+		border-width: 5px;
+		border-style: solid;
+		border-color: #e5e7eb; /* gray-200 */
+		border-top-color: #3b82f6; /* blue-500 */
+		border-radius: 9999px;
+		animation: spin 1s linear infinite;
+		/* Dark mode support */
+		@media (prefers-color-scheme: dark) {
+			border-color: #374151; /* gray-700 */
+			border-top-color: #60a5fa; /* blue-400 */
+		}
+	}
+}
+
+@keyframes todo-enter {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
